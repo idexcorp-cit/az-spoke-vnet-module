@@ -7,7 +7,7 @@ This Terraform module is designed to be used with Terragrunt for deploying multi
 
 ```hcl
 module "spoke_vnet" {
-    source = ""
+    source = "git::https://github.com/idexcorp-cit/az-spoke-vnet-module.git?ref=<version tag>"
 
     resource_prefix             = "cus-acct-network"
     spoke_network_location      = "centralus"
