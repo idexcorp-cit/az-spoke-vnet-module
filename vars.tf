@@ -48,3 +48,26 @@ variable subnet_enable_private_service {
 variable subnet_service_endpoints {
     default = null
 }
+
+# If true, a route table will be created
+variable route_table {
+    default = false
+}
+/* Requires route_table be true
+Ex:
+routes = {
+    route1 = {
+        name            = "on-prem"
+        address_prefix  = "10.0.0.0/8"
+        hop_type        = "VirtualNetworkGateway"
+    }
+    route2 = {
+        name            = "default"
+        address_prefix  = "0.0.0.0/0"
+        hop_type        = "Internet"
+    }
+}
+*/
+variable routes {
+    default = {}
+}

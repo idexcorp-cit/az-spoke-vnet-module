@@ -9,4 +9,13 @@ module "spoke_vnet" {
     peer_use_remote_gateways    = false
 
     subnet_service_endpoints    = ["Microsoft.Storage"]
+
+    route_table                 = true
+    routes = {
+        route1 = {
+            name            = "default"
+            address_prefix  = "0.0.0.0/0"
+            hop_type        = "Internet"
+        }
+    }
 }
