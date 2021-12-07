@@ -14,5 +14,5 @@ resource "azurerm_subnet" "default" {
 }
 
 output "subnet_id" {
-    value       = azurerm_subnet.default["spoke"].id
+    value       = var.custom_subnet == false ? azurerm_subnet.default["spoke"].id : null
 }
