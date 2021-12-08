@@ -1,5 +1,5 @@
 resource "azurerm_route_table" "spoke" {
-    for_each    = var.routes != false ? toset(["spoke"]) : []
+    for_each    = var.route_table != false ? toset(["spoke"]) : []
 
     name                    = "${var.resource_prefix}-spoke-vnet"
     resource_group_name     = azurerm_resource_group.spoke.name
